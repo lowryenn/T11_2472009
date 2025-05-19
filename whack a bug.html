@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="whack a bug .css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   <script>
+    $(document).ready(function () {
+  let score = 0;
+  let timeLeft = 10;
+  const gameArea = $("#gameArea");
+  const timerDisplay = $("#timer");
+  const scoreDisplay = $("#score");
+
+  const gameWidth = gameArea.width();
+  const gameHeight = gameArea.height();
+
+  const bugImage ="icon bugs.png"
+
+  const spawnBug = () => {
+    const x = Math.random() * (gameWidth - 30);
+    const y = Math.random() * (gameHeight - 30);
+
+    const $bug = $("<img class='bug'>").attr("src", bugImage);
+    $bug.css({ left: x, top: y });
+
+    $bug.on("click", function () {
+      score++;
+      scoreDisplay.text(score);
+      $(this).remove();
+    });
+
+    gameArea.append($bug);
+  };
+
+  const interval = setInterval(() => {
+    if (timeLeft > 0) {
+      spawnBug();
+      timeLeft--;
+      timerDisplay.text(timeLeft);
+    } else {
+      clearInterval(interval);
+      $(".bug").remove(); 
+      alert("Waktu habis! Skor akhir: " + score);
+    }
+  }, 1000);
+});
+   </script>
+</head>
+
+<body>
+    <div id="gameArea"></div>
+<div id="info">
+  Time Left: <span id="timer">10</span>s <br>
+  Score: <span id="score">0</span>
+</div>
+</body>
+</html>

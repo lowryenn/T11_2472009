@@ -1,0 +1,47 @@
+body {
+    background-color: #f0f2f5;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+#idsatu {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    height: 30px;
+    width: 60px;
+    border: none;
+    margin: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+#button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column-reverse; 
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+
+.data {
+    background-color: #7bdff2;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    
+}

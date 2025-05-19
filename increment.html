@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increament</title>
+    <link rel="stylesheet" href="increament.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+  <div id="kotak0">0</div>
+  <div id="kotak1">0</div>
+  <div id="kotak2">0</div>
+  <div id="kotak3">0</div>
+  <div id="kotak4">0</div>
+</body>
+
+<script>
+  $(document).ready(function () {
+    for (let i = 0; i < 5; i++) {
+      let id = "#kotak" + i;
+
+      
+      $(id).on("click", function () {
+        let angka = parseInt($(this).text()) - 1;
+        $(this).text(angka);
+        
+        
+        if (angka > 0) {
+          $(this).css("background", "red");
+        }
+
+        if (angka === 0) {
+          $(this).css("background", "white");}
+      });
+
+   
+      $(id).on("contextmenu", function (e) {
+        e.preventDefault();
+        let angka = parseInt($(this).text()) + 1;
+        if (angka < 0) angka = 0;
+
+        $(this).text(angka);
+
+        if (angka === 0) {
+          $(this).css("background", "white");
+        } else {
+          $(this).css("background", "green");
+        }
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

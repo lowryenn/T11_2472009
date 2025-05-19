@@ -1,0 +1,20 @@
+ #gameArea {
+      width: 800px;
+      height: 500px;
+      border: 2px solid #0000ff;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .bug {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      cursor: pointer;
+    }
+    
+    #info {
+      font-family: Arial;
+      font-size: 16px;
+    }

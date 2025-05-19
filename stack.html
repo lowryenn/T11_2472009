@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack</title>
+    <link rel="stylesheet" href="stack.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            let angka = []
+
+            function updatestack()
+            {
+                let container = document.getElementById("container");
+                container.innerHTML =""
+
+                angka.forEach(ItemBaru =>{
+                    $("#container").append("<div class ='data'>"+ItemBaru+"</div>");
+                })
+            }
+
+            $("#btn1").click(()=>{
+                let nanya = prompt("Masukkan data untuk push:")
+                angka.push(nanya);
+                console.log(angka)
+                updatestack();
+            })
+            $("#btn2").click(()=>{
+                angka.pop();
+                updatestack();
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="idsatu"><b><h2>Data Structure - Stack Demo</h2></b></div>
+    <button id="btn1">Push</button>
+    <button id="btn2">Pop</button>
+    <div id="container"></div>
+</body>
+</html>
